@@ -1,104 +1,103 @@
 # EulerSpace
 
-**Laboratorio Digital de Matematica, Fisica & Ciencia da Computacao**
+**Digital Laboratory for Mathematics, Physics & Computer Science**
 
-Plataforma educacional interativa com suporte a multiplos idiomas (EN/PT/ES), simulacoes de fisica, laboratorios de criptografia e computacao quantica, renderizacao LaTeX em tempo real e assistente IA.
+Interactive educational platform with multi-language support (EN/PT/ES), physics simulations, cryptography and quantum computing labs, real-time LaTeX rendering, and an AI assistant.
 
 ---
 
-## Funcionalidades
+## Features
 
-### Aprendizado
-- **Academia** - Curriculo completo de matematica e fisica com teoria, exercicios e dicas (20 licoes, 433 blocos de teoria, 100 exercicios)
-- **Aprenda do Zero** - Fundamentos interativos com tabuada, calculadora, dicas e validacao de respostas
-- **Formulas** - Referencia completa de formulas matematicas e fisicas
+### Learning
+- **Academy** - Complete math and physics curriculum with theory, exercises, and hints (20 lessons, 433 theory blocks, 100 practice problems)
+- **Foundations** - Interactive fundamentals with multiplication tables, calculator, hints, and answer validation
+- **Formulas** - Comprehensive math and physics formula reference
 
-### Laboratorios de Ciencia
-- **Lab de Fisica** - 6 simulacoes: projetil, MHS, pendulo, ondas, campo eletrico, orbital
-- **Lab de Criptografia** - Cifras classicas (Caesar, Vigenere), simetrica (AES), assimetrica (RSA, Diffie-Hellman), hashing, analise de seguranca
-- **Lab Quantico** - Qubits e esfera de Bloch, portas quanticas, circuitos (Bell, GHZ, teletransporte), algoritmos (Grover, Shor, BB84)
+### Science Labs
+- **Physics Lab** - 6 simulations: projectile motion, SHM, pendulum, waves, electric field, orbital mechanics
+- **Crypto Lab** - Classical ciphers (Caesar, Vigenere), symmetric (AES), asymmetric (RSA, Diffie-Hellman), hashing, security analysis
+- **Quantum Lab** - Qubits & Bloch sphere, quantum gates, circuits (Bell, GHZ, teleportation), algorithms (Grover, Shor, BB84)
 
-### Ferramentas
-- **Calculadora** - Motor simbolico com SymPy (derivadas, integrais, EDOs, matrizes)
-- **Editor LaTeX** - Editor com preview em tempo real usando KaTeX
-- **Graficos** - Visualizacao interativa com Plotly.js
-- **Assistente IA** - Explicacoes passo a passo, geracao de exercicios
+### Tools
+- **Calculator** - Symbolic math engine powered by SymPy (derivatives, integrals, ODEs, matrices)
+- **LaTeX Editor** - Real-time preview editor using KaTeX
+- **Graphs** - Interactive visualization with Plotly.js
+- **AI Assistant** - Step-by-step explanations and exercise generation
 
 ### Extras
-- **Pesquisa** - Ferramentas para pesquisa matematica
-- **Desafios** - Problemas no estilo olimpiada
+- **Research** - Mathematical research tools
+- **Challenges** - Olympiad-style problems
 
 ---
 
-## Stack Tecnologico
+## Tech Stack
 
 ### Frontend
-| Tecnologia | Versao | Uso |
+| Technology | Version | Purpose |
 |---|---|---|
 | React | 19.2 | UI Framework |
 | Vite | 7.3 | Build tool & dev server |
-| React Router | 7.13 | Navegacao SPA |
-| KaTeX | 0.16 | Renderizacao LaTeX |
-| Plotly.js | 3.3 | Graficos interativos |
-| Axios | 1.13 | Cliente HTTP |
-| CodeMirror | 5.65 | Editor de codigo |
+| React Router | 7.13 | SPA routing |
+| KaTeX | 0.16 | LaTeX rendering |
+| Plotly.js | 3.3 | Interactive charts |
+| Axios | 1.13 | HTTP client |
+| CodeMirror | 5.65 | Code editor |
 
 ### Backend
-| Tecnologia | Versao | Uso |
+| Technology | Version | Purpose |
 |---|---|---|
-| FastAPI | 0.115 | API REST |
-| SymPy | 1.13 | Motor matematico simbolico |
-| NumPy | 1.26 | Computacao numerica |
-| SciPy | 1.13 | Simulacoes cientificas |
-| Uvicorn | - | Servidor ASGI |
+| FastAPI | 0.115 | REST API |
+| SymPy | 1.13 | Symbolic math engine |
+| NumPy | 1.26 | Numerical computing |
+| SciPy | 1.13 | Scientific simulations |
+| Uvicorn | - | ASGI server |
 
 ### i18n
-Suporte completo a 3 idiomas: **English**, **Portugues**, **Espanol**
+Full support for 3 languages: **English**, **Portuguese**, **Spanish**
 
 ---
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 EulerSpace/
 ├── frontend/                    # React + Vite
 │   ├── src/
-│   │   ├── pages/              # 13 paginas (Dashboard, Academy, CryptoLab, QuantumLab, etc.)
+│   │   ├── pages/              # 13 pages (Dashboard, Academy, CryptoLab, QuantumLab, etc.)
 │   │   ├── components/         # Sidebar, LatexRenderer
-│   │   ├── data/               # Curriculo, exercicios, traducoes de conteudo
-│   │   ├── i18n/               # Sistema de internacionalizacao (context + translations)
+│   │   ├── data/               # Curriculum, exercises, content translations
+│   │   ├── i18n/               # Internationalization system (context + translations)
 │   │   ├── services/           # API client (axios)
-│   │   ├── styles/             # CSS global
-│   │   ├── App.jsx             # Router principal
+│   │   ├── styles/             # Global CSS
+│   │   ├── App.jsx             # Main router
 │   │   └── main.jsx            # Entry point
 │   ├── package.json
 │   ├── vite.config.js
-│   └── vercel.json             # Config de deploy Vercel
+│   └── vercel.json             # Vercel deployment config
 │
 ├── backend/                     # FastAPI + Python
 │   ├── api/
-│   │   └── routes.py           # 17 endpoints REST
+│   │   └── routes.py           # 17 REST endpoints
 │   ├── engine/
-│   │   └── symbolic.py         # Motor SymPy (solve, diff, integrate, etc.)
+│   │   └── symbolic.py         # SymPy engine (solve, diff, integrate, etc.)
 │   ├── physics/
-│   │   └── simulator.py        # Simulador (projetil, MHS, pendulo, ondas, etc.)
+│   │   └── simulator.py        # Simulator (projectile, SHM, pendulum, waves, etc.)
 │   ├── ai/
-│   │   └── assistant.py        # Assistente IA
-│   ├── main.py                 # App FastAPI
+│   │   └── assistant.py        # AI assistant
+│   ├── main.py                 # FastAPI app
 │   └── requirements.txt
 │
-├── prompt.md                    # Visao e roadmap do projeto
 └── README.md
 ```
 
 ---
 
-## Instalacao Local
+## Local Installation
 
-### Pre-requisitos
+### Prerequisites
 - Node.js >= 18
 - Python >= 3.10
-- npm ou yarn
+- npm or yarn
 
 ### Frontend
 
@@ -106,7 +105,7 @@ EulerSpace/
 cd frontend
 npm install
 npm run dev
-# Acesse http://localhost:5173
+# Available at http://localhost:5173
 ```
 
 ### Backend
@@ -118,12 +117,12 @@ source venv/bin/activate    # Linux/Mac
 # venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
-# API disponivel em http://localhost:8000
+# API available at http://localhost:8000
 ```
 
-### Variaveis de Ambiente (Frontend)
+### Environment Variables (Frontend)
 
-Crie um arquivo `.env` em `frontend/`:
+Create a `.env` file in `frontend/`:
 
 ```env
 VITE_API_URL=http://localhost:8000/api
@@ -131,25 +130,25 @@ VITE_API_URL=http://localhost:8000/api
 
 ---
 
-## Deploy na Vercel
+## Deploy to Vercel
 
-### Passo 1: Fork ou clone o repositorio
+### Step 1: Fork or clone the repository
 
 ```bash
 git clone git@github.com:CyberSecurityUP/EulerSpace.git
 ```
 
-### Passo 2: Crie uma conta na Vercel
+### Step 2: Create a Vercel account
 
-Acesse [vercel.com](https://vercel.com) e faca login com sua conta GitHub.
+Go to [vercel.com](https://vercel.com) and sign in with your GitHub account.
 
-### Passo 3: Importe o projeto
+### Step 3: Import the project
 
-1. No dashboard da Vercel, clique em **"Add New..."** > **"Project"**
-2. Selecione o repositorio **EulerSpace** da lista
-3. Configure as opcoes de build:
+1. On the Vercel dashboard, click **"Add New..."** > **"Project"**
+2. Select the **EulerSpace** repository from the list
+3. Configure the build settings:
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
 | **Framework Preset** | Vite |
 | **Root Directory** | `frontend` |
@@ -157,36 +156,36 @@ Acesse [vercel.com](https://vercel.com) e faca login com sua conta GitHub.
 | **Output Directory** | `dist` |
 | **Install Command** | `npm install` |
 
-4. Em **Environment Variables**, adicione:
+4. Under **Environment Variables**, add:
 
-| Variavel | Valor |
+| Variable | Value |
 |---|---|
-| `VITE_API_URL` | URL do seu backend (ex: `https://seu-backend.onrender.com/api`) |
+| `VITE_API_URL` | Your backend URL (e.g., `https://your-backend.onrender.com/api`) |
 
-5. Clique em **"Deploy"**
+5. Click **"Deploy"**
 
-### Passo 4: Configure o dominio (opcional)
+### Step 4: Configure a custom domain (optional)
 
-Na aba **"Settings"** > **"Domains"**, adicione seu dominio personalizado.
+Go to **"Settings"** > **"Domains"** to add your custom domain.
 
-### Passo 5: Deploy do Backend
+### Step 5: Deploy the Backend
 
-O backend (FastAPI) precisa de hospedagem separada. Opcoes recomendadas:
+The backend (FastAPI) requires separate hosting. Recommended options:
 
-#### Render (Recomendado - Gratis)
-1. Acesse [render.com](https://render.com)
-2. Crie um **Web Service** conectado ao repo
+#### Render (Recommended - Free tier available)
+1. Go to [render.com](https://render.com)
+2. Create a **Web Service** connected to the repo
 3. Configure:
    - **Root Directory**: `backend`
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-4. Copie a URL gerada e atualize `VITE_API_URL` na Vercel
+4. Copy the generated URL and update `VITE_API_URL` on Vercel
 
 #### Railway
-1. Acesse [railway.app](https://railway.app)
-2. Crie projeto a partir do GitHub
-3. Configure o diretorio raiz como `backend`
-4. Railway detecta automaticamente o Python
+1. Go to [railway.app](https://railway.app)
+2. Create a project from GitHub
+3. Set the root directory to `backend`
+4. Railway auto-detects Python
 
 #### Docker (Self-hosted)
 ```dockerfile
@@ -197,22 +196,22 @@ RUN pip install -r requirements.txt
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-### Passo 6: Redeploy automatico
+### Step 6: Automatic redeployment
 
-Cada `git push` para a branch conectada faz deploy automatico na Vercel.
+Every `git push` to the connected branch triggers an automatic deploy on Vercel.
 
 ---
 
 ## Branches
 
-| Branch | Proposito |
+| Branch | Purpose |
 |---|---|
-| `main` | Versao estavel de producao |
-| `develop` | Integracao de desenvolvimento ativo |
-| `feature/frontend` | Mudancas especificas do frontend |
-| `feature/backend` | Mudancas especificas do backend |
+| `main` | Stable production release |
+| `develop` | Active development integration |
+| `feature/frontend` | Frontend-specific changes |
+| `feature/backend` | Backend-specific changes |
 
-### Fluxo de trabalho
+### Workflow
 
 ```
 feature/frontend ──┐
@@ -220,50 +219,50 @@ feature/frontend ──┐
 feature/backend ───┘
 ```
 
-1. Trabalhe nas branches `feature/*`
-2. Merge para `develop` quando pronto
-3. Merge `develop` para `main` para releases
+1. Work on `feature/*` branches
+2. Merge into `develop` when ready
+3. Merge `develop` into `main` for releases
 
 ---
 
 ## API Endpoints
 
-### Matematica (`/api/math/`)
-| Metodo | Endpoint | Descricao |
+### Math (`/api/math/`)
+| Method | Endpoint | Description |
 |---|---|---|
-| POST | `/solve` | Resolver equacoes |
-| POST | `/differentiate` | Derivadas |
-| POST | `/integrate` | Integrais (definidas e indefinidas) |
-| POST | `/simplify` | Simplificar expressoes |
-| POST | `/limit` | Calcular limites |
-| POST | `/series` | Expansao em serie |
-| POST | `/ode` | Equacoes diferenciais |
-| POST | `/matrix` | Operacoes com matrizes |
-| POST | `/plot` | Gerar dados para graficos |
+| POST | `/solve` | Solve equations |
+| POST | `/differentiate` | Compute derivatives |
+| POST | `/integrate` | Definite and indefinite integrals |
+| POST | `/simplify` | Simplify expressions |
+| POST | `/limit` | Compute limits |
+| POST | `/series` | Series expansion |
+| POST | `/ode` | Ordinary differential equations |
+| POST | `/matrix` | Matrix operations |
+| POST | `/plot` | Generate plot data |
 
-### Fisica (`/api/physics/`)
-| Metodo | Endpoint | Descricao |
+### Physics (`/api/physics/`)
+| Method | Endpoint | Description |
 |---|---|---|
-| POST | `/projectile` | Movimento de projetil |
-| POST | `/shm` | Movimento harmonico simples |
-| POST | `/pendulum` | Pendulo simples |
-| POST | `/wave` | Equacao de onda 1D |
-| POST | `/electric-field` | Campo eletrico 2D |
-| POST | `/orbital` | Mecanica orbital |
+| POST | `/projectile` | Projectile motion |
+| POST | `/shm` | Simple harmonic motion |
+| POST | `/pendulum` | Simple pendulum |
+| POST | `/wave` | 1D wave equation |
+| POST | `/electric-field` | 2D electric field |
+| POST | `/orbital` | Orbital mechanics |
 
-### IA (`/api/ai/`)
-| Metodo | Endpoint | Descricao |
+### AI (`/api/ai/`)
+| Method | Endpoint | Description |
 |---|---|---|
-| POST | `/explain` | Explicacao passo a passo |
-| POST | `/exercises` | Gerar exercicios |
-| POST | `/validate-proof` | Validar demonstracoes |
+| POST | `/explain` | Step-by-step explanation |
+| POST | `/exercises` | Generate exercises |
+| POST | `/validate-proof` | Validate proofs |
 
 ---
 
-## Licenca
+## License
 
-MIT License - Livre para uso, modificacao e distribuicao.
+MIT License - Free to use, modify, and distribute.
 
 ---
 
-**Criado por [CyberSecurityUP](https://github.com/CyberSecurityUP)**
+**Created by [CyberSecurityUP](https://github.com/CyberSecurityUP)**
